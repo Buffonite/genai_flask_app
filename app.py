@@ -23,18 +23,15 @@ def generate():
     
     try:
         if model == 'llama':
-            msg = llama_response(system_prompt, user_message)
+            result = llama_response(system_prompt, user_message)
         elif model == 'granite':
-            msg = granite_response(system_prompt, user_message)
+            result = granite_response(system_prompt, user_message)
         elif model == 'mistral':
-            msg = mistral_response(system_prompt, user_message)
+            result = mistral_response(system_prompt, user_message)
         else:
             return jsonify({"error": "Invalid model selection"}), 400
 
-        result = {
-            "response": msg.content,
-            "duration": time.time() - start_time
-        }
+        result['duration'] = time.time() - start_time
 
         return jsonify(result)
 
