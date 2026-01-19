@@ -4,7 +4,7 @@ from ibm_watsonx_ai.foundation_models import ModelInference
 from ibm_watsonx_ai.metanames import GenTextParamsMetaNames
 credentials = Credentials(
                 url = "https://ca-tor.ml.cloud.ibm.com",
-                api_key = "kaYHCGrv3PLM_prm0_TFIrwmqXSQa2eqjdXbec6qsuPz" # Normally you'd put an API key here, but we've got you covered here
+                api_key = "api" # Normally you'd put an API key here, but we've got you covered here
                   )
 params = {
     GenTextParamsMetaNames.DECODING_METHOD: "greedy",
