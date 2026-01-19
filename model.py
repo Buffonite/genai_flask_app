@@ -50,8 +50,12 @@ mistral_template = PromptTemplate(
 
 def get_ai_response(model, template, system_prompt, user_prompt):
     chain = template | model | json_parser
-    return chain.invoke({'system_prompt':system_prompt, 'user_prompt':user_prompt, 'format_prompt':json_parser.get_format_instructions()})
-
+    result = chain.invoke({
+        'system_prompt': system_prompt,
+        'user_prompt': user_prompt,
+        'format_prompt': json_parser.get_format_instructions()
+    })
+    return result["response"]   # 返回字符串
 # Model-specific response functions
 def llama_response(system_prompt, user_prompt):
     return get_ai_response(llama_llm, llama_template, system_prompt, user_prompt)
