@@ -1,22 +1,23 @@
 # 🧠 GenAI Flask App  
-A lightweight yet production‑ready AI web application built with **Flask**, **IBM Watsonx**, and **LangChain**, supporting multiple LLMs including **Llama**, **Granite**, and **Mistral**.
+A fully deployed AI web application built with **Flask**, **IBM Watsonx**, and **LangChain**, supporting multiple LLMs including **Llama**, **Granite**, and **Mistral**.
 
-This project demonstrates full‑stack AI engineering: model orchestration, prompt templating, JSON‑structured outputs, and cloud deployment.
+🔗 **Live Demo:** https://genai-flask-app-1.onrender.com  
+*(Hosted on Render — publicly accessible)*
 
 ---
 
 ## 🚀 Overview
 
-GenAI Flask App is a complete end‑to‑end AI assistant featuring:
+GenAI Flask App is a full‑stack AI assistant demonstrating real-world AI engineering:
 
-- 🌐 A clean web interface (HTML + JavaScript)
-- 🧩 A Flask backend with REST API endpoints
+- 🌐 Interactive web UI (HTML + JavaScript)
+- 🧩 Flask backend with REST API
 - 🤖 Multi‑model support (Llama / Granite / Mistral)
 - 🧠 LangChain prompt templates + JSON output parsing
-- 🔐 Secure environment variable handling (no hard‑coded keys)
-- ☁️ Deployment on Render with public access
+- 🔐 Secure environment variable handling
+- ☁️ Fully deployed and live on Render
 
-It’s designed as a practical, real‑world AI application suitable for learning, showcasing, or extending into a larger product.
+This project showcases how to build, integrate, and deploy modern LLM applications end‑to‑end.
 
 ---
 
@@ -50,82 +51,23 @@ genai_flask_app/
 │── static/
 │     └── script.js       # Frontend logic
 │── requirements.txt      # Dependencies
-│── README.md             # Project documentation
+│── README.md             # Documentation
 ```
 
 ---
 
-## 🔧 Running Locally
+## 🤖 Features
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/Buffonite/genai_flask_app
-cd genai_flask_app
-```
+### **Multi‑Model AI Assistant**
+Users can switch between:
+- **Llama**
+- **Granite**
+- **Mistral**
 
-### 2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
+Each model is wrapped with LangChain and returns structured JSON output.
 
-### 3. Set environment variables
-```
-WATSONX_API_KEY=your_api_key
-WATSONX_PROJECT_ID=your_project_id
-```
-
-### 4. Start the server
-```bash
-python app.py
-```
-
-Visit:
-
-```
-http://localhost:5000
-```
-
----
-
-## ☁️ Deploying to Render
-
-1. Push the project to GitHub  
-2. Create a new **Render Web Service**  
-3. Configure:
-
-**Build Command**
-```
-pip install -r requirements.txt
-```
-
-**Start Command**
-```
-python app.py
-```
-
-4. Add environment variables:
-
-```
-WATSONX_API_KEY=xxxx
-WATSONX_PROJECT_ID=xxxx
-```
-
-5. Deploy and access your public URL.
-
----
-
-## 🤖 Model Selection
-
-The frontend sends:
-
-```json
-{
-  "model": "llama",
-  "user_message": "Hello"
-}
-```
-
-The backend routes the request to the selected model and returns a unified response:
+### **Unified Response Format**
+All models return:
 
 ```json
 {
@@ -134,11 +76,12 @@ The backend routes the request to the selected model and returns a unified respo
 }
 ```
 
-Supported models:
+### **Secure API Handling**
+No API keys are hard‑coded.  
+All secrets are stored in environment variables.
 
-- `llama`
-- `granite`
-- `mistral`
+### **Cloud Deployment**
+The app is fully deployed and accessible online.
 
 ---
 
@@ -163,5 +106,6 @@ MIT License
 
 ## ✨ Author
 
-**Barry**  
-A hands‑on AI developer passionate about building real, deployable AI applications.
+**barry**  
+AI developer passionate about building real, deployable AI applications.
+
