@@ -32,7 +32,7 @@ def generate():
             return jsonify({"error": "Invalid model selection"}), 400
 
         result = {
-            "response": msg.content,
+            "response": msg,
             "duration": time.time() - start_time
         }
 
